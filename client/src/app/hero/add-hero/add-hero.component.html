@@ -1,0 +1,53 @@
+<div class="container">
+    <form (ngSubmit)="insertData()" [formGroup]="form">
+        <div class="form-group mt-5">
+            <label for="nickname">Nickname</label>
+            <input type="text" formControlName="nickname" [ngClass]="{'is-invalid':submitted && fcontrols['nickname'].errors}" class ="form-control" placeholder="Enter Nickname">
+
+            <div *ngIf="submitted && fcontrols['nickname'].errors" class="invalid-feedback">
+                <div *ngIf="fcontrols['nickname'].errors['required']">Nickname is required</div>
+            </div>
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="real_name">Real Name</label>
+            <input type="text" formControlName="real_name" [ngClass]="{'is-invalid':submitted && fcontrols['real_name'].errors}" class ="form-control" placeholder="Enter Real name">
+        
+            <div *ngIf="submitted && fcontrols['real_name'].errors" class="invalid-feedback">
+                <div *ngIf="fcontrols['real_name'].errors['required']">Real Nameis required</div>
+            </div>
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="origin_description">Origin</label>
+            <textarea type="textarea" row="10" formControlName="origin_description" [ngClass]="{'is-invalid':submitted && fcontrols['origin_description'].errors}" class ="form-control" placeholder="Enter Origin description"></textarea>
+        
+            <div *ngIf="submitted && fcontrols['origin_description'].errors" class="invalid-feedback">
+                <div *ngIf="fcontrols['origin_description'].errors['required']">Origin is required</div>
+            </div>
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="superpowers">Superpowers</label>
+            <textarea type="text" row="5" formControlName="superpowers" [ngClass]="{'is-invalid':submitted && fcontrols['superpowers'].errors}" class ="form-control" placeholder="Enter Hero's superpowers"></textarea>
+        
+            <div *ngIf="submitted && fcontrols['superpowers'].errors" class="invalid-feedback">
+                <div *ngIf="fcontrols['superpowers'].errors['required']">Superpowers is required</div>
+            </div>
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="catch_phrase">Catch phrase</label>
+            <input type="text" formControlName="catch_phrase" [ngClass]="{'is-invalid':submitted && fcontrols['catch_phrase'].errors}" class ="form-control" placeholder="Enter Hero's catch phrase">
+        
+            <div *ngIf="submitted && fcontrols['catch_phrase'].errors" class="invalid-feedback">
+                <div *ngIf="fcontrols['catch_phrase'].errors['required']">Catch phrase is required</div>
+            </div>
+        </div>
+
+        <div class="form-group mt-3">
+            <button  class="btn btn-dark">Submit</button>
+        </div>
+
+    </form>
+</div>

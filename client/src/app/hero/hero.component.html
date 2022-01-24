@@ -1,0 +1,22 @@
+<table class="table mt-5">
+    <thead>
+      <tr class="align-middle">
+        <th scope="col" class="col-sm-1">#</th>
+        <th scope="col" class="col-sm-2">Image</th>
+        <th scope="col" class="col-sm-4">Superhero</th>
+        <th scope="col" class="col-sm-3">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let hero of heros; let i = index " class="align-middle">
+        <th scope="row" class="col-sm-1">{{ i + 1}}</th>
+        <td class="col-sm-2"><img src="https://cdn-icons-png.flaticon.com/512/15/15390.png"></td>
+        <td class="col-sm-4">{{hero.nickname}}</td>
+        <td class="col-sm-3">
+            <button type="button" class="btn btn-info mx-3" routerLink="info/{{hero._id}}">Info</button>
+            <button type="button" class="btn btn-primary mx-3" routerLink="edit/{{hero._id}}">Edit</button>
+            <button type="button" class="btn btn-danger mx-3" (click)="deleteData(hero._id)">Delete</button>
+      </tr>
+      
+    </tbody>
+  </table>
